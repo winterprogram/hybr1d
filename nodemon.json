@@ -1,0 +1,22 @@
+{
+    "restartable": "rs",
+    "ignore": [
+        ".git",
+        "node_modules/",
+        "dist/",
+        "coverage/"
+    ],
+    "watch": [
+        "src/"
+    ],
+    "execMap": {
+        "ts": "node -r ts-node/register"
+    },
+    "env": {
+        "AWS_REGION": "ap-south-1",
+        "AWS_PROFILE": "starcast",
+        "NODE_ENV": "prod",
+        "FIREBASE_CONFIG": "$${ssm./prod/secrets/FIREBASE_CONFIG}"
+    },
+    "ext": "json,ts"
+}
